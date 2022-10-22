@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+    <style type="text/css">
+       A {
+        color: blue;
+       }
+       A:visited {
+        color: blue;
+       }
+       a {
+        text-decoration: none;
+       }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</head>
+<body>
+    {% import 'basket_utils.html' as utils %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+            <h2>Доступные билеты</h2>
+                {% if items %}
+                    {% for item in items %}
+                        {{ utils.render_item(item, show_form=True) }}
+                    {% endfor %}
+                {% else %}
+                <p>Нет товаров</p>
+                {% endif %}
+            </div>
+            <div class="col-md-5">
+                <h2>Корзина</h2>
+                {% if basket %}
+                    {% for item in basket %}
+                        {{ utils.render_item(item, show_form=False) }}
+                    {% endfor %}
+                {% else %}
+                <p>Корзина пустая</p>
+                {% endif %}
+            </div>
+            <div class="col-md-2">
+                <a href="buy" style="text-decoration: none">Купить</a>
+                <br>
+                <a href="clear" style="text-decoration: none">Очистить корзину</a>
+                <br>
+                <a href="/" style="text-decoration: none">В главное меню</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

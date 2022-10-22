@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <a href="/edit/insert">Добавить заказ</a>
+    <br>
+    <a href="/">В главное меню</a>
+    <br>
+    {% if items %}
+        Все заказы<br>
+        <table border="0">
+            <tr>
+<!--                <th>Id заказа</th>-->
+                <th>Наз. фильма</th>
+                <th>Дата</th>
+                <th>Номер зала</th>
+                <th>Номер места</th>
+                <th>Стоимость</th>
+
+            </tr>
+            {% for item in items %}
+                <tr><td>{{ item['film_name']}}</td>
+                    <td>{{ item['dtime'] }}</td>
+                    <td>{{ item['num_hall'] }}</td>
+                    <td>{{ item['num_place'] }}</td>
+                    <td>{{ item['price'] }}</td>
+
+
+                    <td>
+                        <form action="" method="post">
+                            <input type="hidden" name="id_c" value="{{ item['id_c'] }}">
+                            <input type="submit" name="action" value="Удалить">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        Заказов нет<br>
+    {% endif %}
+</div>
+</body>
+</html>

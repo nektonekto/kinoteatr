@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат</title>
+</head>
+<body>
+<center>
+<div class="three"><h1><span>Результаты по запросу: {{task}}</span></h1></div>
+    {% if result %}
+        <table border="1">
+            <tr>
+                {% for name in schema %}
+                    <th>{{name}}</th>
+                {% endfor %}
+            </tr>
+            {% for a in result %}
+                <tr>
+                    {% for b in a %}
+                        <th>{{ a.get(b) }}</th>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <br>
+    <div class="div-error"><h2>Данные по этому запросу не найдены!</h2></div>
+        <br>
+    {% endif %}
+    <br></center>
+    <br><br>
+   <p align="center"> <a href = "/requests/select">Назад</a> </p>
+</body>
+</html>

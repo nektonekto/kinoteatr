@@ -1,0 +1,1 @@
+update bilet set avail  = 0 where id = '$id'

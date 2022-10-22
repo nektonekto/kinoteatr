@@ -1,0 +1,1 @@
+select * from kinoteatr.my_user where login='$log'

@@ -1,0 +1,31 @@
+{
+  "kassir": [
+    "",
+    "log_in.login_page",
+    "basket.basket",
+    "routes.clear_basket_handler",
+    "routes.buy_items"
+  ],
+  "admin":[
+    "",
+    "log_in.login_page",
+    "requests.zapros1",
+    "requests.zapros2",
+    "requests.select",
+    "basket.basket",
+    "routes.clear_basket_handler",
+    "routes.buy_items",
+    "edit.fun_edit",
+    "edit.fun_insert"
+  ],
+    "unauthorized": [
+    "log_in.login_page"
+  ],
+  "analyst":[
+    "",
+    "log_in.login_page",
+    "requests.zapros1",
+    "requests.zapros2",
+    "requests.select"
+  ]
+}

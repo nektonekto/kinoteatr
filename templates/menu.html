@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню</title>
+</head>
+<body>
+    <h1 align = center>Выберите действие</h1>
+    <br><br><br>
+
+        <div align = center>
+            <a href = {{url_for('log_in.login_page')}}>Авторизация</a>
+            <br><br><br>
+            <a href = {{url_for('requests.select')}}>Начать запросы</a>
+            <br><br><br>
+            <a href = {{url_for('basket.basket')}}>Корзина</a>
+            <br><br><br>
+            <a href = {{url_for('clear_session')}}>Выход</a>
+            <br><br><br>
+
+        </div>
+</body>
+</html>
