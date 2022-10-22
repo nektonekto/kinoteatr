@@ -1,6 +1,4 @@
-# Стандартные библиотеки
 from functools import wraps
-# Сторонние библиотеки
 from flask import session, request, current_app
 from flask import render_template
 
